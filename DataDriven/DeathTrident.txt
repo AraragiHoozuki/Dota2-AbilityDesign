@@ -1,0 +1,159 @@
+  "death_trident"
+	{
+		"ID" "5693"
+		"BaseClass"				"ability_datadriven"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"2"
+		"AbilityTextureName"			"lion_finger_of_death"
+
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCooldown"				"160.0 100.0 40.0"
+		"AbilityManaCost"				"300 500 700"
+		"AbilityModifierSupportValue"	"0.0"
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_Lion.FingerOfDeath"
+				"Target"		"CASTER"
+			}
+	
+			"FireSound"
+			{
+				"EffectName"	"Hero_Lion.FingerOfDeathImpact"
+				"Target"		"TARGET"
+			}
+	
+			"FireEffect"
+			{
+				"EffectName"	"particles/units/heroes/hero_lion/lion_spell_finger_of_death.vpcf"
+				"EffectAttachType"	"start_at_customorigin"
+				
+	
+				"ControlPointEntities"
+				{
+					"CASTER"	"attach_attack1"
+					"TARGET"	"attach_hitloc"
+					"TARGET"	"attach_hitloc"
+				}
+			}
+	
+			"ApplyModifier"
+			{
+				"ModifierName"		"modifier_death_trident_damage1"
+				"Target"			"TARGET"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_lion/death_trident.lua"
+				"Function"		"death_trident"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_death_trident_damage1"
+			{
+				"IsHidden"	"1"
+				"Duration"	"%damage_delay"
+	
+				"OnDestroy"
+				{
+					"Damage"
+					{
+						"Target"	"TARGET"
+						"Type"		"DAMAGE_TYPE_PURE"
+						"Damage"	"%damage"
+					}
+				}
+			}
+
+			"modifier_death_trident_damage2"
+			{
+				"IsHidden"	"1"
+				"Duration"	"%damage_delay"
+
+				"OnCreated"
+				{
+					"FireEffect"
+			        {
+				        "EffectName"	"particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf"
+				        "EffectAttachType"	"start_at_customorigin"
+				
+	
+				        "ControlPointEntities"
+				        {
+			                "CASTER"	"attach_attack1"
+					        "TARGET"	"attach_hitloc"
+					        "TARGET"	"attach_hitloc"
+				        }
+			        }
+				}
+	
+				"OnDestroy"
+				{
+					"Damage"
+					{
+						"Target"	"TARGET"
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+						"Damage"	"%damage"
+					}
+				}
+			}
+
+			"modifier_death_trident_damage3"
+			{
+				"IsHidden"	"1"
+				"Duration"	"%damage_delay"
+
+				"OnCreated"
+				{
+					"FireEffect"
+			        {
+				        "EffectName"	"particles/units/heroes/hero_pugna/pugna_ward_attack_heavy.vpcf"
+				        "EffectAttachType"	"start_at_customorigin"
+				
+	
+				        "ControlPointEntities"
+				        {
+			                "CASTER"	"attach_attack1"
+					        "TARGET"	"attach_hitloc"
+					        "TARGET"	"attach_hitloc"
+				        }
+			        }
+				}
+	
+				"OnDestroy"
+				{
+					"Damage"
+					{
+						"Target"	"TARGET"
+						"Type"		"DAMAGE_TYPE_PHYSICAL"
+						"Damage"	"%damage"
+					}
+				}
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"500 700 900"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_delay"		"0.25"
+			}
+		}
+	}
