@@ -1,0 +1,60 @@
+	"haughty_aloof"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"dire_bond"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO"
+		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
+		"Modifiers"
+		{
+			"modifier_haughty_aloof"
+			{
+				"Passive"	"1"
+				"IsBuff"	"1"
+				"IsHidden"	"1"
+				"States"	{}
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/haughty_aloof.lua"
+						"Function"	"haughty_aloof"
+					}
+				}
+				"ThinkInterval"	"0.1"
+			}
+			"modifier_haughty_aloof_effect"
+			{
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"IsBuff"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%bonus_regen"
+				}
+				"States"	{}
+				"Passive"	"0"
+			}
+			"modifier_haughty_aloof_immune"
+			{
+				"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"IsBuff"	"1"
+				"States"
+				{
+					"MODIFIER_STATE_MAGIC_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"bonus_regen"	"2 3 4 5"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"500 600 700 800"
+			}
+		}
+	}
