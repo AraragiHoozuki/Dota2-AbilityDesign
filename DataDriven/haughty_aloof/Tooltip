@@ -1,0 +1,9 @@
+//haughty_aloof
+"DOTA_Tooltip_Ability_haughty_aloof" "孤高"
+"DOTA_Tooltip_Ability_haughty_aloof_Description" "根据周围地方英雄的数量增加生命回复速度，若数量在3个以上，再获得魔法免疫效果。"
+"DOTA_Tooltip_Ability_haughty_aloof_bonus_regen" "每个英雄增加生命回复速度（点/秒）："
+"DOTA_Tooltip_Ability_haughty_aloof_radius" "判定半径："
+"DOTA_Tooltip_modifier_haughty_aloof_effect" "孤高"
+"DOTA_Tooltip_modifier_haughty_aloof_effect_Description" "生命回复速度提高"
+"DOTA_Tooltip_modifier_haughty_aloof_immune" "孤高"
+"DOTA_Tooltip_modifier_haughty_aloof_immnue_Description" "魔法免疫"
