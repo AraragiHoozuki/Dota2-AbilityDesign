@@ -1,5 +1,6 @@
 	"Kousinseyo"
 	{
+		"ID" "8000"
 		"BaseClass"	"ability_datadriven"
 		"AbilityTextureName"	"aechter"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -12,6 +13,10 @@
 		"AbilityCastPoint"	"0.2"
 		"AbilityCooldown"	"60"
 		"AbilityManaCost"	"200 275 350"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/heroes_underlord/abyssal_underlord_darkrift_target.vpcf"
+		}
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -36,6 +41,8 @@
 				"Properties"	{}
 				"States"	{}
 				"Aura_ApplyToCaster"	"1"
+				"EffectName"	"particles/units/heroes/heroes_underlord/abyssal_underlord_darkrift_target.vpcf"
+				"EffectAttachType"	"attach_hitloc"
 			}
 			"modifier_Kousinseyo_effect"
 			{
@@ -47,6 +54,8 @@
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%atk_bonus"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%mov_bonus_percent"
 				}
+				"EffectName"	"particles/units/heroes/heroes_underlord/abyssal_underlord_darkrift_target.vpcf"
+				"EffectAttachType"	"follow_hitloc"
 			}
 		}
 		"AbilitySpecial"
