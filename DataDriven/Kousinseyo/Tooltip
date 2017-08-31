@@ -1,0 +1,8 @@
+//Kousinseyo
+"DOTA_Tooltip_Ability_Kousinseyo" "黑王进军"
+"DOTA_Tooltip_Ability_Kousinseyo_Description" "7秒内获得黑王进军光环效果，提高周围700范围内友军的攻击力和移动速度"
+"DOTA_Tooltip_Ability_Kousinseyo_atk_bonus" "攻击力提高："
+"DOTA_Tooltip_Ability_Kousinseyo_mov_bonus_percent" "%移动速度提高："
+"DOTA_Tooltip_modifier_Kousinseyo_effect" "黑王进军"
+"DOTA_Tooltip_modifier_Kousinseyo_aura" "黑王进军光环"
+"DOTA_Tooltip_modifier_Kousinseyo_effect_Description" "这个单位攻击力和移动速度得到了提高"
